@@ -112,7 +112,7 @@ public class Application extends Controller {
 	 */
 	public static Result buy(Long id) throws IOException, JSONException, WePayException {
 		Farmer farmer = Farmer.findById(id);
-		String redirect_uri = "http://localhost:9000/farmers/payment_success/" + id;
+		String redirect_uri = "http://" + Http.Context.current().request().host() + "/farmers/payment_success/" + id;
 		Checkout checkout = farmer.wepayCheckoutCreate(redirect_uri);
 		return ok(views.html.buy.render(farmer, checkout.getCheckout_uri()));
 	}
