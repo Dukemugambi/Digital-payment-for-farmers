@@ -1,0 +1,57 @@
+@(flash: String, farmer: Farmer, isSession: Boolean, hasAccount: Boolean)
+
+@import helper._
+
+@main("WeFarm") {
+
+	@if(flash!=null) {
+		<div class="alert alert-block alert-info">
+			@flash
+		</div>
+	}
+
+	<h1 class="floatLeft">@farmer.farm</h1>
+	
+	@if(isSession && !hasAccount) {
+		<p>
+			<b>Please create an account to manage your money: </b>
+			<a class="btn btn-primary" href="@farmer.wepayOauth2Authorize()">Click here to create your account</a>
+		</p>
+	}
+	
+	@if(!isSession && hasAccount) {
+		<p>
+			<a class="btn btn-danger btn-large" href="@routes.Application.buy(farmer.id)">Buy @farmer.produce Now!</a>
+		</p>
+	}
+
+	<p>
+	  <b>Name:</b>
+	  @farmer.username
+	</p>
+
+	<p>
+	  <b>Email:</b>
+	  @farmer.useremail 
+	</p>
+
+	<p>
+	  <b>Farm:</b>
+	  @farmer.farm
+	</p>
+
+	<p>
+	  <b>Produce:</b>
+	  @farmer.produce
+	</p>
+
+	<p>
+	  <b>Produce price:</b>
+	  $@farmer.produce_price
+	</p>
+	
+	@if(isSession) {
+		<a href="@routes.Application.edit(farmer.id)">Edit</a>
+	} 
+	
+}

@@ -1,0 +1,21 @@
+2013-07-31 13:48:04,685 - [INFO] - from play in main 
+Listening for HTTP on /0.0.0.0:9000
+
+2013-07-31 13:48:07,839 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:mysql://localhost/wefarm?characterEncoding=UTF-8] bound to JNDI as DefaultDS
+
+2013-07-31 13:48:08,126 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/wefarm?characterEncoding=UTF-8
+
+2013-07-31 13:48:08,864 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-07-31 13:52:30,938 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:mysql://localhost/wefarm?characterEncoding=UTF-8] bound to JNDI as DefaultDS
+
+2013-07-31 13:52:30,991 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/wefarm?characterEncoding=UTF-8
+
+2013-07-31 13:52:31,285 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+

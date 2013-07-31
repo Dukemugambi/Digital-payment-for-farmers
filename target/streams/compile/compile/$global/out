@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to /Users/adamsommer/Documents/workspace/WeFarm/target/scala-2.10/classes...[0m
+[0m[[0minfo[0m] [0mCompiling 9 Scala sources and 5 Java sources to /Users/adamsommer/Documents/workspace/WeFarm/target/scala-2.10/classes...[0m
+[0m[[33mwarn[0m] [0m/Users/adamsommer/Documents/workspace/WeFarm/conf/routes:13: unreachable code[0m
+[0m[[33mwarn[0m] [0mGET     /farmers/						controllers.Application.index()[0m
+[0m[[33mwarn[0m] [0mone warning found[0m
+[0m[[33mwarn[0m] [0mNote: /Users/adamsommer/Documents/workspace/WeFarm/app/models/Farmer.java uses unchecked or unsafe operations.[0m
+[0m[[33mwarn[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m

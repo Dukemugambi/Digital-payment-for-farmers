@@ -1,0 +1,21 @@
+@(flash: String, loginForm: Form[Session.Login])
+
+@import helper._
+
+@main("WeFarm") {
+
+	@if(flash!=null) {
+		<div class="alert alert-block alert-info">
+			@flash
+		</div>
+	}
+
+	<h1>Farmer Login</h1>
+
+	@form(routes.Session.authenticate()) {
+		@inputText(loginForm("useremail"), '_label -> "Email", '_showConstraints -> false)
+	  	@inputPassword(loginForm("password"), '_label -> "Password", '_showConstraints -> false)
+	  	<input type="submit" class="btn btn-primary" value="Login">
+	}
+
+}

@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /								controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file					controllers.Assets.at(path="/public", file)
+
+# Application          
+
+GET     /farmers/						controllers.Application.index()
+GET     /farmers/:id					controllers.Application.show(id: Long)
+
+GET		/register/						controllers.Application.register()
+POST	/register/						controllers.Application.newFarmer()
+GET		/farmers/oauth/:id				controllers.Application.oauth(id: Long, code: String)
+
+GET		/login/							controllers.Session.login()
+POST	/login/							controllers.Session.authenticate()
+GET		/logout/						controllers.Session.logout()
+
+GET		/farmers/:id/edit				controllers.Application.edit(id: Long)
+POST	/farmers/:id/edit				controllers.Application.update(id: Long)
+
+GET		/farmers/buy/:id				controllers.Application.buy(id: Long)
+GET 	/farmers/payment_success/:id	controllers.Application.paymentSuccess(id: Long, checkout_id: String)

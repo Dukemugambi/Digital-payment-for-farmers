@@ -1,0 +1,37 @@
+@(flash: String, farmers: List[Farmer])
+
+@import helper._
+
+@main("WeFarm") {
+
+	@if(flash!=null) {
+		<div class="alert alert-block alert-info">
+			@flash
+		</div>
+	}
+    
+    <h1>Welcome to WeFarm</h1>
+    <p>You can buy lots of fresh and local produce here. If you are a farmer and want to sell your produce, please register.</p>
+    <br>
+
+    <h3>Our farmers</h3>
+    <table class="table table-striped table-bordered">
+    	<tbody>
+	    	<tr>
+	    		<th>Farmer</th>
+	    		<th>Farm</th>
+	    		<th>Produce</th>
+	    		<th>Produce Price</th>
+	    	</tr>
+	    	@for(farmer <- farmers) {
+		    	<tr>
+		    		<td><a href="@routes.Application.show(farmer.id)">@farmer.username</a></td>
+		    		<td><a href="@routes.Application.show(farmer.id)">@farmer.farm</a></td>
+		    		<td>@farmer.produce</td>
+		    		<td>$@farmer.produce_price</td>
+		    	</tr>
+			}
+    	</tbody>
+    </table>
+
+}

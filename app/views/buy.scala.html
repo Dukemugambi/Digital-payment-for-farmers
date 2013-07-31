@@ -1,0 +1,17 @@
+@(farmer: Farmer, checkout_uri: String)
+
+@import helper._
+
+@main("WeFarm") {
+
+	<h1 class="floatLeft">Buy @farmer.produce from @farmer.farm for $@farmer.produce_price</h1>
+	<p><a href="@routes.Application.show(farmer.id)">Back to @{farmer.username}'s @farmer.farm farm</a></p>
+	
+	<div id="wepay-iframe-div">
+		<script type="text/javascript" src="https://www.wepay.com/js/iframe.wepay.js"></script>
+		<script type="text/javascript">
+			WePay.iframe_checkout("wepay-iframe-div", "@checkout_uri");
+		</script>
+	</div>
+	
+}
