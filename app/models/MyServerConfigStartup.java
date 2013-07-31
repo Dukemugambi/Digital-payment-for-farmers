@@ -16,7 +16,7 @@ public class MyServerConfigStartup implements ServerConfigStartup {
 		Boolean useStageEnv = ConfigFactory.load().getBoolean("USE_STAGE_ENV");
 		initializeWePayObject(appClientId, appClientSecret, useStageEnv);
 		serverConfig.setDatabaseSequenceBatchSize(1);
-    }
+	}
     
 	public static void initializeWePayObject(Long appClientId, String appClientSecret, boolean useStageEnv) {
 		Application.wepay = new WePay();

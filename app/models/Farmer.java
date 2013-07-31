@@ -76,11 +76,11 @@ public class Farmer extends Model {
 		farmer.update(this.id);
 	}
 	
-    public static Farmer authenticate(String useremail, String password) {
-        Farmer farmer = find.where().eq("useremail", useremail).findUnique();
-        if (Session.checkPassword(password, farmer.password)) return farmer;
-        return null;
-    }
+	public static Farmer authenticate(String useremail, String password) {
+		Farmer farmer = find.where().eq("useremail", useremail).findUnique();
+		if (Session.checkPassword(password, farmer.password)) return farmer;
+		return null;
+	}
 	
 	public boolean hasWepayAccessToken() {		
 		return this.wepay_access_token != null;

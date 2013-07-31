@@ -38,8 +38,8 @@ public class Session extends Controller {
         return ok(views.html.login.render(flash("message"), form(Login.class)));
     }
 	
-	public static Result authenticate() {
-		Form<Login> loginForm = form(Login.class).bindFromRequest();
+    public static Result authenticate() {
+        Form<Login> loginForm = form(Login.class).bindFromRequest();
         if(loginForm.hasErrors()) {
             flash("message", "Incorrect email or password.");
             return redirect(routes.Session.login());
@@ -47,19 +47,19 @@ public class Session extends Controller {
         else {
             session("connected", loginForm.get().useremail);
             flash("message", "Welcome back to WeFarm.");
-    		return redirect(routes.Application.index());
+            return redirect(routes.Application.index());
         }
-	}
+    }
 	
-	public static Result logout() {
-		session().clear();
+    public static Result logout() {
+        session().clear();
         flash("message", "You've been logged out");
-	    return redirect(routes.Application.index());  
-	}
+        return redirect(routes.Application.index());  
+    }
 	
-	public static boolean isSessionOwner(Farmer farmer) {
-		if (farmer.useremail.equals(session("connected"))) return true;
-		else return false;
-	}
+    public static boolean isSessionOwner(Farmer farmer) {
+        if (farmer.useremail.equals(session("connected"))) return true;
+        else return false;
+    }
 	
 }
