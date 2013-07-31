@@ -63,7 +63,7 @@ public class Farmer extends Model {
 	}
 	
 	public static void create(Farmer farmer) {
-		farmer.password = Session.hashPassword(farmer.password);
+		farmer.password = Session.encryptPassword(farmer.password);
 		farmer.save();
 	}
 
@@ -72,7 +72,7 @@ public class Farmer extends Model {
 	}
 
 	public void update(Farmer farmer) {
-		farmer.password = Session.hashPassword(farmer.password);
+		farmer.password = Session.encryptPassword(farmer.password);
 		farmer.update(this.id);
 	}
 	

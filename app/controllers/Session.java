@@ -24,9 +24,9 @@ public class Session extends Controller {
         }
     }
     
-    public static String hashPassword(String clearPassword) {
-    	if (clearPassword == null) return null;
-		return BCrypt.hashpw(clearPassword, BCrypt.gensalt());
+    public static String encryptPassword(String cleanPassword) {
+    	if (cleanPassword == null) return null;
+		return BCrypt.hashpw(cleanPassword, BCrypt.gensalt());
     }
     
     public static boolean checkPassword(String candidate, String encrypted) {
