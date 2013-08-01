@@ -70,7 +70,7 @@ public class Application extends Controller {
 	/**
 	 * handle new farmer redirect for wepay oauth2 
 	 */
-	public static Result oauth(Long id, String code) throws IOException, JSONException, WePayException {
+	public static Result oauth2(Long id, String code) throws IOException, JSONException, WePayException {
 		Farmer farmer = Farmer.findById(id);
 		farmer.wepayOauth2Token(code);
 		if (farmer.hasWepayAccessToken() && farmer.hasWepayAccount()) flash("message", "We successfully connected you to WePay!");

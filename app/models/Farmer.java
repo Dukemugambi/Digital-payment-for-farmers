@@ -76,11 +76,11 @@ public class Farmer extends Model {
 		farmer.update(this.id);
 	}
 	
-	public static Farmer authenticate(String useremail, String password) {
-		Farmer farmer = find.where().eq("useremail", useremail).findUnique();
-		if (Session.checkPassword(password, farmer.password)) return farmer;
-		return null;
-	}
+    public static Farmer authenticate(String useremail, String password) {
+        Farmer farmer = find.where().eq("useremail", useremail).findUnique();
+        if (Session.checkPassword(password, farmer.password)) return farmer;
+        return null;
+    }
 	
 	public boolean hasWepayAccessToken() {		
 		return this.wepay_access_token != null;
@@ -92,7 +92,7 @@ public class Farmer extends Model {
 	
 	public String wepayOauth2Authorize() throws IOException, JSONException {
 		OAuth2Data data = new OAuth2Data();
-		data.redirect_uri = "http://" + Http.Context.current().request().host() + "/farmers/oauth/" + this.id;
+		data.redirect_uri = "http://" + Http.Context.current().request().host() + "/farmers/oauth2/" + this.id;
 		data.scope = "manage_accounts,view_balance,collect_payments,view_user,preapprove_payments,send_money";
 		data.user_email = this.useremail;
 		data.user_name = this.username;
@@ -102,7 +102,7 @@ public class Farmer extends Model {
 	
 	public void wepayOauth2Token(String code) throws IOException, JSONException, WePayException {
 		OAuth2Data data = new OAuth2Data();
-		data.redirect_uri = "http://" + Http.Context.current().request().host() + "/farmers/oauth/" + this.id;
+		data.redirect_uri = "http://" + Http.Context.current().request().host() + "/farmers/oauth2/" + this.id;
 		data.code = code;
 		String token = OAuth2.token(data, null);
 		this.wepay_access_token = token;
