@@ -1,3 +1,6 @@
+WeFarm-Java
+================================
+
 Welcome to WeFarm!
 
 WeFarm is an online marketplace that processes payments using the WePay API. WeFarm utilizes the WePay API Java SDK to simplify making API calls through WePay.
