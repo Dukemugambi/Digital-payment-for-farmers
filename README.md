@@ -7,7 +7,7 @@ WeFarm is an online marketplace that processes payments using the WePay API. WeF
 
 Full documentation on the WePay API can be found at https://www.wepay.com/developer. 
 
-The WePay API Java SDK is open source and can be found at https://github.com/wepay/Java-SDK. 
+The WePay API Java SDK is open source and can be found at https://github.com/wepay/WePay-Java-SDK. 
 
 A live version of WeFarm can be found online at http://wefarm.herokuapp.com/. 
 
